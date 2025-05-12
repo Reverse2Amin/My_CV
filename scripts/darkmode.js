@@ -1,29 +1,27 @@
-let darkmode = localStorage.getItem('darkmode');
-const themeSwitch = document.getElementById('theme-switch'); 
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
 
-const enableDarkmode = () => {
-    document.body.classList.add('darkmode');
-    localStorage.setItem('darkmode', 'active');
-};
+    // Überprüfe den gespeicherten Zustand im localStorage
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
 
-const disableDarkmode = () => {
-    document.body.classList.remove('darkmode');
-    localStorage.setItem('darkmode', 'inactive'); 
-};
-
-
-if (darkmode === 'active') {
-    enableDarkmode();
-} else {
-    disableDarkmode(); 
-}
-
-
-themeSwitch.addEventListener("click", () => {
-    darkmode = localStorage.getItem('darkmode');
-    if (darkmode !== "active") {
-        enableDarkmode();
+    // Setze den initialen Zustand basierend auf localStorage
+    if (isDarkMode) {
+        body.classList.add("darkmode");
+        themeToggle.checked = true;
     } else {
-        disableDarkmode();
+        body.classList.remove("darkmode");
+        themeToggle.checked = false;
     }
+
+    // Event-Listener für den Theme-Switch
+    themeToggle.addEventListener("change", () => {
+        if (themeToggle.checked) {
+            body.classList.add("darkmode");
+            localStorage.setItem("darkMode", "true"); // Speichere Dark Mode im localStorage
+        } else {
+            body.classList.remove("darkmode");
+            localStorage.setItem("darkMode", "false"); // Speichere Light Mode im localStorage
+        }
+    });
 });

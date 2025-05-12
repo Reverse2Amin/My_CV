@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/x-icon" href="images/AS.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslauf</title>
@@ -9,14 +10,11 @@
 </head>
 <body class="">
     <header>
-        <button id="theme-switch">
-           <img src="images/dark_mode.svg" alt="Dark Mode Svg">
-           <img src="images/light_mode.svg" alt="Light Mode Svg">
-        </button>
-        <img src="images/portrait.jpg" alt="Portrait von Amin Salem" class="portrait">
-        <h1>Amin Salem</h1>
-        <p>Informatiker in Ausbildung – Fachrichtung Applikationsentwicklung</p>
-        <p>Rapperswil-Jona, Schweiz</p>
+        <video id="Background-Video" src="videos/NYC_Squarepark.MP4" autoplay muted loop></video>
+        
+        <img src="images/AS.png" alt="Amin Salem Logo" class="portrait">
+        
+        
     </header>
     <nav class="sticky-nav">
         <ul>
@@ -26,13 +24,20 @@
             <li><a href="#skills">Fähigkeiten</a></li>
             <li><a href="#contact">Kontakt</a></li>
         </ul>
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider">
+                <img src="images/light_mode.svg" alt="Light Mode" id="light-icon">
+                <img src="images/dark_mode.svg" alt="Dark Mode" id="dark-icon">
+            </span>
+        </label>
     </nav>
     <main>
-       
-        <section id="about">
+        <section class="jump-points" id="about"></section>
+        <section class="content">
             <h2>Über mich</h2>
             <p>
-                Amin Salem, 17 Jahre alt, wohnhaft in Rapperswil-Jona, besucht derzeit das erste Jahr der Informatikmittelschule.
+                Amin Salem, 16 Jahre alt, wohnhaft in Rapperswil-Jona, besucht derzeit das erste Jahr der Informatikmittelschule.
                 Bereits gesammelte Erfahrungen umfassen die Programmierung von Webseiten mit HTML und CSS sowie die Entwicklung
                 von Skripten mit PowerShell und Bash. Zusätzlich gehören die Arbeit mit Java und C# zur Programmierung von Anwendungen
                 sowie die Nutzung von MySQL für Datenbanken zum Kompetenzbereich. Besondere Stärken liegen in der Motivation,
@@ -40,15 +45,31 @@
                 deshalb reise ich auch gerne.
             </p>
         </section>
-    
-       
-        <section id="experience">
+
+        <section class="jump-points" id="experience"></section>
+        <section class="content">
             <h2>Erfahrung</h2>
-            <p>Aktuell keine formale Berufserfahrung eingetragen.</p>
+            <ul>
+                <li>
+                    <strong>Home-Server aufsetzen und konfigurieren</strong><br>
+                    2024<br>
+                    Eigenständige Installation und Einrichtung eines Home-Servers auf Linux-Basis für private Nutzung, inkl. Netzwerkfreigaben und Benutzerverwaltung.
+                </li>
+                <li>
+                    <strong>Erstellung einer CS2-Homepage</strong><br>
+                    2024<br>
+                    Entwicklung einer statischen Webseite für eine Projektarbeit für ein Modul mit HTML, CSS und JavaScript. Gestaltung des Designs, Server-Infos, Newsbereich und Integration externer Inhalte.
+                </li>
+                <li>
+                    <strong>Automatisierungsskripte mit PowerShell und Bash</strong><br>
+                    2024<br>
+                    Erstellung von Skripten zur Automatisierung von Systemaufgaben, Ordnerbereinigung, Netzlaufwerke verbinden und einfache Backups und ein YouTube Download-Tool.
+                </li>   
+            </ul>
         </section>
-    
-      
-        <section id="education">
+
+        <section class="jump-points" id="education"></section>
+        <section class="content">
             <h2>Ausbildung</h2>
             <table>
                 <tr>
@@ -83,9 +104,9 @@
                 </tr>
             </table>
         </section>
-    
-        
-        <section id="skills">
+
+        <section class="jump-points" id="skills"></section>
+        <section class="content">
             <h2>Fähigkeiten</h2>
             <table>
                 <tr>
@@ -135,12 +156,21 @@
                     </td>
                 </tr>
             </table>
+
+        <p>Man fragt sich nun, was mein Ziel ist: Ich möchte die Programmiersprachen so sicher beherrschen, dass ich eigene Projekte selbstständig und ohne ständiges Nachschlagen umsetzen kann.</p>
         </section>
-    
-       
-        <section id="contact">
+
+        <section class="jump-points" id="contact"></section>
+        <section class="content">
             <h2>Kontakt</h2>
-            <p>Du kannst mich per E-Mail oder über LinkedIn kontaktieren.</p>
+            <p>
+                <strong>E-Mail:</strong> 
+                <a href="mailto:salembokretache@gmail.com" onclick="alert('Ein E-Mail-Fenster wird geöffnet!')">salembokretache@gmail.com</a>
+            </p>
+            <p>
+                <strong>Telefon:</strong> 
+                <a href="tel:+41763067144">076 306 71 44</a>
+            </p>
         </section>
     </main>
     

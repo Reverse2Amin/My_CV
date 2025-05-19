@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-
 html {
     scroll-behavior: smooth;
+    z-index: 0;
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 350;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
-
 
 :root {
     --primary-color: #3674B5;
@@ -25,7 +24,7 @@ body {
     --header-text-color: #FFFFFF;
     --footer-background-color: #3674B5;
     --footer-text-color: #FFFFFF;
-    --box-shadow-color: #000000;
+    --box-shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 .darkmode {
@@ -37,9 +36,8 @@ body {
     --header-text-color: #FFFFFF;
     --footer-background-color: #1E1E1E;
     --footer-text-color: #FFFFFF;
-    --box-shadow-color: rgba(255, 255, 255, 0.5);
+    --box-shadow-color: rgba(255, 255, 255, 0.1);
 }
-
 
 header {
     background-color: var(--primary-color);
@@ -52,34 +50,54 @@ header {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    z-index: -2;
+    z-index: 0;
     height: 400px;
 }
 
-header .portrait {
-    border-radius: 50%;
+.portrait-container {
+    margin-bottom: 10px;
+}
+
+.portrait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 300px;
     height: 300px;
-    object-fit: cover;
-    z-index: 3;
-    margin-bottom: 10px;
+    background-color: white;
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-size: 120px;
+    font-weight: bold;
+    border: 4px solid white;
     box-shadow: 0 4px 8px var(--box-shadow-color);
+    font-family: 'Oswald', sans-serif;
 }
 
 header h1 {
     margin: 10px 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
 }
 
 header p {
     font-size: 1.2rem;
 }
 
+.bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0.8;
+    z-index: -1;
+}
 
 nav.sticky-nav {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    align-items: center;
     background-color: var(--secondary-color);
     padding: 10px 20px;
     position: sticky;
@@ -93,9 +111,9 @@ nav.sticky-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 20px; /* Abstand zwischen den Links */
-    flex: 1; /* Nimmt den verfügbaren Platz ein */
-    justify-content: center; 
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
 }
 
 nav.sticky-nav li {
@@ -114,6 +132,20 @@ nav.sticky-nav a:hover {
     color: var(--accent-color);
 }
 
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
 
 main {
     padding: 20px;
@@ -129,8 +161,12 @@ section h2 {
     border-bottom: 2px solid var(--accent-color);
     padding-bottom: 5px;
     margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
 }
 
+section ul li {
+    margin-bottom: 15px;
+}
 
 table {
     width: 100%;
@@ -149,7 +185,6 @@ table th {
     color: var(--header-text-color);
 }
 
-
 .progress-bar {
     background-color: var(--secondary-color);
     border-radius: 5px;
@@ -162,26 +197,23 @@ table th {
     height: 100%;
 }
 
-
 section.content {
     padding: 20px;
     background-color: var(--accent-color);
     border-radius: 25px;
     margin: 40px auto;
     width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--box-shadow-color);
 }
 
 section.content a {
     color: var(--text-color);
     text-decoration: none;
-    
 }
 
 section.content a:hover {
     text-decoration: underline;
 }
-
 
 section .jump-point, section.jump-points {
     position: relative;
@@ -191,39 +223,122 @@ section .jump-point, section.jump-points {
     margin-top: -60px;
 }
 
-
 footer {
     background-color: var(--footer-background-color);
     color: var(--footer-text-color);
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     margin-top: 20px;
 }
 
-
-#Background-Video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
+.mt-4 {
+    margin-top: 20px;
 }
 
+/* Login Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    transition: background-color 0.3s;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 20px var(--box-shadow-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.darkmode .login-box {
+    background: #2a2a2a;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.login-box h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.login-box p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: white;
+    color: #333;
+    transition: border 0.3s;
+}
+
+.darkmode input[type="text"],
+.darkmode input[type="password"] {
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+.remember-me {
+    font-size: 0.9em;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-color);
+}
+
+.error {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+/* Theme Switch Styles */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    color: var(--text-color);
+}
 
 .theme-switch {
-    position: absolute;
-    right: 20px; /* Positioniert den Slider ganz rechts */
-    top: 50%; /* Zentriert den Slider vertikal */
-    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+    position: relative;
     display: inline-block;
-    width: 70px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: var(--secondary-color);
-    box-shadow: 0 2px 5px var(--box-shadow-color);
-    cursor: pointer;
+    width: 50px;
+    height: 24px;
 }
 
 .theme-switch input {
@@ -234,111 +349,98 @@ footer {
 
 .slider {
     position: absolute;
+    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 20px;
-    background-color: var(--secondary-color);
-    transition: background-color 0.4s ease;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Positioniert die Symbole links und rechts */
-    padding: 0 10px; /* Abstand für die Symbole */
+    justify-content: space-between;
+    padding: 0 5px;
 }
 
 .slider:before {
-    content: "";
     position: absolute;
-    height: 24px;
-    width: 24px;
+    content: "";
+    height: 18px;
+    width: 18px;
     left: 3px;
     bottom: 3px;
     background-color: white;
+    transition: .4s;
     border-radius: 50%;
-    transition: transform 0.4s ease;
     z-index: 2;
 }
 
-.slider img {
-    height: 20px;
-    width: 20px;
-    transition: opacity 0.4s ease;
+input:checked + .slider {
+    background-color: var(--primary-color);
 }
 
-.slider img:first-child {
-    display: block; /* Standardmäßig sichtbar */
-    order: 1; /* Sonne links */
-}
-
-.slider img:last-child {
-    display: block; /* Mond rechts */
-    order: 2;
-    opacity: 0; /* Standardmäßig unsichtbar */
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--primary-color);
 }
 
 input:checked + .slider:before {
-    transform: translateX(40px); /* Verschiebt den Schieberegler nach rechts */
+    transform: translateX(26px);
 }
 
-input:checked + .slider img:first-child {
-    opacity: 0; /* Versteckt die Sonne im Dark Mode */
+#light-icon, #dark-icon,
+#light-icon-nav, #dark-icon-nav {
+    font-size: 12px;
+    z-index: 1;
 }
 
-input:checked + .slider img:last-child {
-    opacity: 1; /* Zeigt den Mond im Dark Mode */
+#dark-icon, #dark-icon-nav {
+    margin-left: auto;
 }
 
-#light-icon {
-    display: block; /* Standardmäßig sichtbar */
-}
-
-#dark-icon {
-    display: none; /* Standardmäßig unsichtbar */
-}
-
-input:checked + .slider #light-icon {
-    display: none; /* Versteckt die Sonne im Dark Mode */
-}
-
-input:checked + .slider #dark-icon {
-    display: block; /* Zeigt den Mond im Dark Mode */
-}
-
-
+/* Responsive Design */
 @media (max-width: 768px) {
     nav.sticky-nav ul {
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 5px;
         width: 100%;
-        
     }
+    
     nav.sticky-nav li {
         flex: 1;
         text-align: center;
-        font-size: 10px;
+        font-size: 14px;
     }
-
+    
     nav.sticky-nav {
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
-
+    
+    .portrait {
+        width: 200px;
+        height: 200px;
+        font-size: 80px;
+    }
+    
+    header {
+        height: 300px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
     section.content {
+        width: 95%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+    
+    .login-box {
         width: 90%;
-        margin: 0;
-        border-radius: 0;
-    }
-
-    section.content h2 {
-        font-size: 1.5rem;
-    }
-
-    section.content p {
-        font-size: 1rem;
-    }
-
-    .theme-switch {
-        height: 25px;
-        width: 60px;
+        max-width: 350px;
     }
 }

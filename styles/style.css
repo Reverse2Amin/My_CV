@@ -15,6 +15,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Farben */
 :root {
     --primary-color: #3674B5;
     --secondary-color: #578FCA;
@@ -39,6 +40,7 @@ body {
     --box-shadow-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Header */
 header {
     background-color: var(--primary-color);
     color: var(--header-text-color);
@@ -95,6 +97,7 @@ header p {
     z-index: -1;
 }
 
+/* Navigation */
 nav.sticky-nav {
     display: flex;
     align-items: center;
@@ -132,6 +135,7 @@ nav.sticky-nav a:hover {
     color: var(--accent-color);
 }
 
+/* Logout Button */
 .logout-btn {
     background-color: #e74c3c;
     color: white;
@@ -147,6 +151,7 @@ nav.sticky-nav a:hover {
     background-color: #c0392b;
 }
 
+/* Main Content */
 main {
     padding: 20px;
 }
@@ -168,6 +173,7 @@ section ul li {
     margin-bottom: 15px;
 }
 
+/* Tabellen */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -185,6 +191,7 @@ table th {
     color: var(--header-text-color);
 }
 
+/* Fortschritt */
 .progress-bar {
     background-color: var(--secondary-color);
     border-radius: 5px;
@@ -197,6 +204,7 @@ table th {
     height: 100%;
 }
 
+/* Kontaktbereich */
 section.content {
     padding: 20px;
     background-color: var(--accent-color);
@@ -223,6 +231,7 @@ section .jump-point, section.jump-points {
     margin-top: -60px;
 }
 
+/* Footer */
 footer {
     background-color: var(--footer-background-color);
     color: var(--footer-text-color);
@@ -231,11 +240,12 @@ footer {
     margin-top: 20px;
 }
 
+/* Margin Top */
 .mt-4 {
     margin-top: 20px;
 }
 
-/* Login Styles */
+/* Login */
 .login-container {
     display: flex;
     justify-content: center;
@@ -324,7 +334,7 @@ button:hover {
     min-height: 20px;
 }
 
-/* Theme Switch Styles */
+/* Theme Switch */
 .theme-toggle-container {
     display: flex;
     align-items: center;
@@ -398,7 +408,7 @@ input:checked + .slider:before {
     margin-left: auto;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     nav.sticky-nav ul {
         flex-direction: row;

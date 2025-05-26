@@ -53,14 +53,16 @@
         </header>
 
         <nav class="sticky-nav">
-            <ul>
+            <button class="menu-toggle" aria-label="Menü öffnen" onclick="toggleMenu(event)">
+                <img src="images/speisekarte.png" alt="Menü" class="burger-img" />
+            </button>
+            <ul id="nav-list">
                 <li><a href="#about">Über mich</a></li>
                 <li><a href="#experience">Erfahrung</a></li>
                 <li><a href="#education">Ausbildung</a></li>
                 <li><a href="#skills">Fähigkeiten</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
-            
             <label class="theme-switch">
                 <input type="checkbox" id="theme-toggle-nav">
                 <span class="slider">
@@ -216,5 +218,21 @@
     </div>
 
     <script src="scripts.js"></script>
+    <script>
+function toggleMenu(e) {
+  if (e) e.stopPropagation();
+  var navList = document.getElementById('nav-list');
+  navList.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var navList = document.getElementById('nav-list');
+  var menuBtn = document.querySelector('.menu-toggle');
+  if (navList && navList.classList.contains('open')) {
+    if (!navList.contains(e.target) && !menuBtn.contains(e.target)) {
+      navList.classList.remove('open');
+    }
+  }
+});
+</script>
 </body>
 </html>

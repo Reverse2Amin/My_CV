@@ -408,49 +408,91 @@ input:checked + .slider:before {
     margin-left: auto;
 }
 
+/* Burger-Icon für Mobile Nav */
+.burger-img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.menu-toggle {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    z-index: 1100;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#nav-list {
+    margin-left: 48px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    nav.sticky-nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 5px;
-        width: 100%;
-    }
-    
-    nav.sticky-nav li {
-        flex: 1;
-        text-align: center;
-        font-size: 14px;
-    }
-    
     nav.sticky-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1200;
+        background: var(--secondary-color);
     }
+    .menu-toggle {
+        display: flex;
+    }
+    nav.sticky-nav ul {
+        display: none;
+        flex-direction: column;
+        background: var(--secondary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        z-index: 1001;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 0 0 12px 12px;
+    }
+    nav.sticky-nav ul.open {
+        display: flex;
+    }
+    nav.sticky-nav li {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--primary-color);
+    }
+    nav.sticky-nav li:last-child {
+        border-bottom: none;
+    }
+    nav.sticky-nav .theme-switch {
+        margin-left: auto;
+        margin-right: 16px;
+        margin-top: 10px;
+    }
+    table {
+        font-size: 12px;
+        width: 100%;
+        table-layout: fixed;
+        word-break: break-word;
+    }
+    table th, table td {
+        padding: 6px;
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
     
-    .portrait {
-        width: 200px;
-        height: 200px;
-        font-size: 80px;
-    }
-    
-    header {
-        height: 300px;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    section.content {
-        width: 95%;
-        padding: 15px;
-        margin: 20px auto;
-    }
-    
-    .login-box {
-        width: 90%;
-        max-width: 350px;
-    }
+}
+
+/* Desktop: Hide toggle */
+.menu-toggle {
+  display: none;
 }

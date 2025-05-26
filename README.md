@@ -12,8 +12,8 @@ Dies ist mein digitaler Lebenslauf, den ich mit **HTML**, **CSS** und **JavaScri
 
 ## 🔗 Live-Demo
 
-> [Hier kannst du meinen Lebenslauf online ansehen](#)  
-*(Füge hier den Link zur GitHub Pages-Version oder zur gehosteten Seite ein.)*
+> [Hier kannst du meinen Lebenslauf online ansehen](https://amin-salem.netlify.app/#experience)  
+
 
 ## 📁 Projektstruktur
 

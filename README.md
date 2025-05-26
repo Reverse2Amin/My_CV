@@ -14,22 +14,9 @@ Dies ist mein digitaler Lebenslauf, den ich mit **HTML**, **CSS** und **JavaScri
 
 > [Hier kannst du meinen Lebenslauf online ansehen](https://amin-salem.netlify.app/#experience)  
 
-
-## 📁 Projektstruktur
-
-📁 images/ → Bilder für das CV
-📁 scripts/ → JavaScript-Dateien
-📁 styles/ → CSS-Dateien
-📄 index.html → Hauptseite des Lebenslaufs
-📄 LICENSE → Lizenzdatei
-📄 README.md → Diese Projektbeschreibung
-
-
-
 ## 🧠 Was ich gelernt habe
 
 - Aufbau einer eigenen Portfolio-Seite
-- Anwendung von responsive Design
 - Grundlagen der Webentwicklung besser verstanden
 
 ## 📬 Kontakt
